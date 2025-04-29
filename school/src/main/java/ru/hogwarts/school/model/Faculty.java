@@ -26,7 +26,7 @@ public class Faculty {
     }
 
     public long getId() {
-        return id;2
+        return id;
     }
 
     public String getName() {
