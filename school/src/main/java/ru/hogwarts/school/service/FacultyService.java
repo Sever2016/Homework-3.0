@@ -29,6 +29,9 @@ public class FacultyService {
     }
 
     public Faculty deleteFaculty(Long id) {
+        for (Student student : facultyRepository.findById(id).get().getStudents()) {
+            student.setFaculty(null);
+        }
         Faculty deletedFaculty = facultyRepository.findById(id).get();
         facultyRepository.deleteById(id);
         return deletedFaculty;
